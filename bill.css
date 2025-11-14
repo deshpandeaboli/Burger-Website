@@ -1,0 +1,68 @@
+body {
+  background: #fff9f0;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.bill-container {
+  max-width: 700px;
+  background: #ffffff;
+  margin: 50px auto;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #e67300;
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+th {
+  background-color: #ffe6cc;
+}
+
+.total-section h2 {
+  color: #333;
+  background: #fff2e0;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.message {
+  margin: 20px 0;
+  font-size: 1.1em;
+}
+
+.btn-section {
+  margin-top: 15px;
+}
+
+button {
+  background-color: #e67300;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #cc6600;
+}

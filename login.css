@@ -1,0 +1,63 @@
+.loginForm {
+    width: 40%;
+   
+    height: auto; 
+    max-height: 90vh; /* Prevents overflow */
+    
+    background: linear-gradient(to bottom, #FFD700, #fe8d04); 
+
+    margin: 20px auto; 
+    
+  
+       
+    border: 3px solid #503010; 
+    border-radius: 8px;
+    padding: 20px 50px; /* Adjusted padding for better look */
+    box-shadow: 0 2px 6px rgba(42, 2, 2, 0.2);
+    gap: 10px;
+}
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height:  100vh;
+      background: linear-gradient(to bottom, #ac0300, rgb(54, 2, 2)); 
+    }
+
+.loginForm input[type="text"],
+.loginForm input[type ="email"],
+.loginForm input[type="password"] 
+
+
+{
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border:3px inset rgb(54, 2, 2);
+    border-radius: 5px;
+    color: #503010; /* Dark text color */
+    font-size: 16px;
+    transition: border-color 0.3s;
+  
+}  
+.loginForm button{
+    width:30%;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+   background-color: white;
+    border:3px inset rgb(54, 2, 2);
+    border-radius: 5px;
+    color: #503010; /* Dark text color */
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+.loginForm button:hover {
+    background-color: #ff7512; 
+}

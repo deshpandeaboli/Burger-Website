@@ -1,0 +1,20 @@
+[
+  {
+    "fname": "anna",
+    "lname": "kafka",
+    "email": "annakafka@test.com",
+    "password": "abcd1234"
+  },
+  {
+    "fname": "peter",
+    "lname": "johnson",
+    "email": "peterjohnson@test.com",
+    "password": "peter1234"
+  },
+  {
+    "fullname": "Kathy Smith",
+    "email": "Kathy.Smith@test.com",
+    "password": "12349876",
+    "address": "Mumbai"
+  }
+]

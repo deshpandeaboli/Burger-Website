@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>menu page</title>
+  <link rel="stylesheet" href="./first.css">
+  <link rel="stylesheet" href="./responsive.css">
+</head>
+<body style="background-color:rgb(54, 2, 2)">
+
+  <div class="navbar"> 
+    <div class="left_section">
+      <img src="./assests/logo-removebg-preview.png" class="logo">
+      <div class="heading">
+        Burger <br>Shaukensss
+      </div>
+    </div>
+
+    
+  </div>
+
+  <div class="navbar_1">
+    <button class="button" onclick="window.location.href='index.html'">
+      <img src="./assests/home.jpg" width="20px" height="20px">Home
+    </button>
+    <button class="button" onclick="window.location.href='Menu.html'">
+      <img src="./assests/menu.png" width="20px" height="20px">Menu
+    </button>
+    <button class="button" onclick="window.location.href='#f1'">
+      <img src="./assests/contact.png" width="20px" height="20px">Details
+    </button>
+    <button class="button" onclick="window.location.href='Gallery.html'">
+      <img src="./assests/camera.jpg" width="20px" height="20px">Gallery
+    </button>
+  </div>
+
+  <!-- OFFERS SECTION -->
+  <div class="offers">
+    <div class="offer_title">
+      <video src="./assests/Our Special offers.mp4" autoplay muted loop></video>     
+    </div>
+
+    <div class="offer_strip">
+  <div class="offer_track">
+    <video src="./assests/Classic Combo.mp4" autoplay muted loop></video>    
+    <video src="./assests/doubledelightcombo.mp4" autoplay muted loop></video>
+    <video src="./assests/vegmealcombo.mp4" autoplay muted loop></video>
+    <video src="./assests/chickencombo.mp4" autoplay muted loop></video>
+    <video src="./assests/chickenmealcombo.mp4" autoplay muted loop></video>
+  </div>
+</div>
+ 
+  </div>
+
+  <!-- 🍔 MENU SECTION -->
+  <div class="menu-section">
+    <h2>Our Special Menu</h2>
+
+    <div class="menu-items">
+
+      <!-- Combos -->
+      <div class="menu-item">
+        <img src="./assests/vegcomboimges.png" class="menu-img">
+        <h3>Classic Combo - ₹149</h3>
+        <input type="number" id="classic" value="0" min="0">
+      </div>
+
+      <div class="menu-item">
+        <img src="./assests/doublevegchesseimage.png" class="menu-img">
+        <h3>Double Delight Combo - ₹199</h3>
+        <input type="number" id="double" value="0" min="0">
+      </div>
+
+      <div class="menu-item">
+      <img src="./assests/vegmealomage.png" class="menu-img">
+        <h3>Veg Meal Combo - ₹129</h3>
+        <input type="number" id="veg" value="0" min="0">
+      </div>
+
+      <div class="menu-item">
+       <img src="./assests/chickencomboimage.png" class="menu-img">
+        <h3>Chicken Combo - ₹179</h3>
+        <input type="number" id="chicken" value="0" min="0">
+      </div>
+
+      <div class="menu-item">
+       <img src="./assests/chickenmealimage.png" class="menu-img">
+        <h3>Chicken Meal Combo - ₹189</h3>
+        <input type="number" id="chickenMeal" value="0" min="0">
+      </div>
+
+      <!-- Milkshakes -->
+      <div class="menu-item">
+        <img src="./assests/vanillaimage.png" class="menu-img">
+        <h3>Vanilla Shake - ₹99</h3>
+        <input type="number" id="vanilla" value="0" min="0">
+      </div>
+
+      <div class="menu-item">
+        <img src="./assests/strawberryimage.png" class="menu-img">
+        <h3>Strawberry Shake - ₹109</h3>
+        <input type="number" id="strawberry" value="0" min="0">
+      </div>
+
+      <div class="menu-item">
+        <img src="./assests/chocolateimahes.png" class="menu-img">
+        <h3>Chocolate Shake - ₹119</h3>
+        <input type="number" id="chocolate" value="0" min="0">
+      </div>
+
+      <!-- Brownies -->
+      <div class="menu-item">
+        <img src="./assests/brownieimage.png" class="menu-img">
+        <h3>Brownie - ₹79</h3>
+        <input type="number" id="brownie" value="0" min="0">
+      </div>
+
+      <!-- Fries -->
+      <div class="menu-item">
+        <img src="./assests/friesimage.png" class="menu-img">
+        <h3>French Fries - ₹59</h3>
+        <input type="number" id="fries" value="0" min="0">
+      </div>
+
+      <!-- Peri-Peri Fries -->
+      <div class="menu-item">
+        <img src="./assests/periperifries.png" class="menu-img">
+        <h3>Peri-Peri French Fries - ₹70</h3>
+        <input type="number" id="pfries" value="0" min="0">
+      </div>
+
+      <!-- Extra Cheese -->
+      <div class="menu-item">
+        <img src="./assests/cheeseimage.png" class="menu-img">
+        <h3>Extra Cheese - ₹30</h3>
+        <input type="number" id="cheese" value="0" min="0">
+      </div>
+
+      <!-- Cold Drink -->
+      <div class="menu-item">
+        <img src="./assests/cokeimage.png" class="menu-img">
+        <h3>Cold Drink - ₹49</h3>
+        <input type="number" id="cold" value="0" min="0">
+      </div>
+
+    </div>
+
+    <!-- ONE BUTTON ONLY -->
+    <div style="text-align:center; margin-top:20px;">
+      <button onclick="addAllToCart()" class="btn_expo">Add All to Cart</button>
+    </div>
+
+  </div>
+
+  <script>
+    function addAllToCart() {
+      const items = [
+        { id: "classic", name: "Classic Combo", price: 149 },
+        { id: "double", name: "Double Delight Combo", price: 199 },
+        { id: "veg", name: "Veg Meal Combo", price: 129 },
+        { id: "chicken", name: "Chicken Combo", price: 179 },
+        { id: "chickenMeal", name: "Chicken Meal Combo", price: 189 },
+        { id: "vanilla", name: "Vanilla Shake", price: 99 },
+        { id: "strawberry", name: "Strawberry Shake", price: 109 },
+        { id: "chocolate", name: "Chocolate Shake", price: 119 },
+        { id: "brownie", name: "Brownie", price: 79 },
+        { id: "fries", name: "French Fries", price: 59 },
+        { id: "pfries", name: "Peri-Peri French Fries", price: 70 },
+        { id: "cheese", name: "Extra Cheese", price: 30 },
+        { id: "cold", name: "Cold Drink", price: 49 }
+      ];
+
+      let cart = [];
+      let total = 0;
+
+      items.forEach(item => {
+        const qty = parseInt(document.getElementById(item.id).value) || 0;
+        if (qty > 0) {
+          const subtotal = qty * item.price;
+          total += subtotal;
+          cart.push({ ...item, qty, subtotal });
+        }
+      });
+
+      if (cart.length === 0) {
+        alert("Please select at least one item before adding to cart!");
+        return;
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      localStorage.setItem("totalBill", total);
+      alert(`All items added! Total: ₹${total}`);
+      window.location.href = "cart.html";
+    }
+  </script>
+
+  <footer class="main_footer" id="f1">
+    <div class="footer_content">
+      <div class="footer_column contact_info">
+        <h3>Burger Shaukensss</h3>
+        <p>123 Grill St, Flavor City, CA 90210</p>
+        <p>&#9990; (555) BURGERS</p>
+        <p>&#9993; order@burgershaukensss.com</p>
+      </div>
+
+      <div class="footer_column footer_links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Menu.html">Menu</a></li>
+          <li><a href="Gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="footer_column social_media">
+        <h3>Follow Us</h3>
+        <div class="social_icons">
+          <a href="#" class="social_icon">FB</a> 
+          <a href="#" class="social_icon">IG</a> 
+          <a href="#" class="social_icon">TW</a>
+        </div>
+        <button class="btn_expo" onclick="window.location.href='Menu.html'">Order Now</button>
+      </div>
+    </div>
+
+    <div class="footer_bottom">
+      &copy; 2025 Burger Shaukensss. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

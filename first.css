@@ -1,0 +1,396 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Navbar (Top Bar: Logo, Login, Cart) --- */
+.navbar {
+    width: 100%;
+    height: 10vh;
+    /* GRADIENT: Yellow/Gold gradient applied to top nav bar */
+    background: linear-gradient(to bottom, #FFD700, #FFC300); 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid #503010; 
+    border-radius: 8px;
+    padding: 0 40px;
+    box-shadow: 0 2px 6px rgba(42, 2, 2, 0.2);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.left_section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    
+    height: 80px; 
+    width: 80px;
+    display: flex;
+  
+}
+
+
+.heading {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #503010; 
+}
+
+.right_section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Login/Cart Button Style */
+.navbar .button {
+    padding: 10px 20px;
+    border: 2px solid #503010; 
+    border-radius: 25px;
+    background-color: #503010; 
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex; 
+    align-items: center; 
+    gap: 5px; 
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* Hover effect for Login/Cart */
+.navbar .button:hover {
+    background-color: #FF8C00; 
+    color: white; 
+    border-color: white;
+}
+
+/* --- Secondary Navbar (Home, Menu, Details, Gallery) --- */
+.navbar_1 {
+    width: 100%;
+    height: 95px;
+    /* GRADIENT: Yellow/Gold gradient applied to secondary nav bar */
+    background: linear-gradient(to bottom, #FFD700, #FFC300); 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid #503010; 
+    border-radius: 8px;
+    padding: 0 50px;
+    box-shadow: 0 2px 6px rgba(42, 2, 2, 0.2);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* 🌟 IMPROVED: Navigation Button Style (Home, Menu, etc.) */
+.navbar_1 .button {
+    /* Increased vertical padding for slightly bigger buttons */
+    padding: 18px 35px; 
+    border: none;
+    /* Smoother, less extreme border-radius */
+    border-radius: 10px; 
+    /* Changed to Black for maximum contrast and clean look */
+    background-color: #000000; 
+    color: white; 
+    cursor: pointer;
+    font-weight: bold;
+    display: flex; 
+    align-items: center; 
+    gap: 5px; 
+    transition: background-color 0.2s;
+}
+
+/* 🌟 HOVER RESTORED & IMPROVED: Navigation Button Hover Effect */
+.navbar_1 .button:hover {
+    /* Hover to the dark brown, contrasting nicely with the black default */
+    background-color: #4d2600; 
+}
+
+
+/* --- Main Content Area and Videos --- */
+/* --- Main Content Area and Videos (Shrunk version) --- */
+.offers {
+    height: 45vh; /* 🔽 Reduced height from 70vh to 45vh */
+    width: 100%;
+    background: linear-gradient(to bottom, #800000, #A80000); 
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.offer_title {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #4d2600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.offer_title video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.offer_marquee {
+    width: 60%;
+    height: 100%;
+    white-space: nowrap;
+}
+
+.offer_marquee video {
+    height: calc(45vh - 20px); /* ✅ Adjusted height to fit smaller section */
+    width: auto;
+    margin-right: 12px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+
+/* --- Explore Button (Main CTA) --- */
+.btn_expo {
+    padding: 15px 40px;
+    background-color: #FF8C00; 
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s;
+}
+
+.btn_expo:hover {
+    background-color: #FFC300; 
+}
+
+/* --- Footer Styles --- */
+
+/* Main Footer Container with Yellow Gradient */
+.main_footer {
+    width: 100%;
+    /* 🌟 CHANGE: Yellow/Orange Gradient applied to the footer */
+    background: linear-gradient(to bottom, #FFD700, #FFC300); 
+    color: #000000; /* Change text color to black for contrast on yellow */
+    padding-top: 40px; 
+    margin-top: 40px; 
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Content Wrapper */
+.footer_content {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    flex-wrap: wrap; 
+}
+
+.footer_column {
+    flex: 1; 
+    min-width: 200px; 
+    margin: 20px;
+}
+
+.footer_column h3 {
+    /* Set headings to Black/Dark Brown */
+    color: #503010; 
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #503010; 
+    padding-bottom: 5px;
+}
+
+/* Links and Lists */
+.footer_links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer_links a {
+    color: #503010; /* Dark text for links on light background */
+    text-decoration: none;
+    line-height: 1.8;
+    display: block;
+    transition: color 0.2s;
+}
+
+.footer_links a:hover {
+    color: #A80000; /* Red hover effect for links */
+}
+
+/* Social Icons */
+.social_icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #503010; /* Dark background */
+    color: white; /* White icons for contrast */
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.social_icon:hover {
+    background-color: #A80000; /* Red background on hover */
+    color: white;
+}
+
+/* Copyright Bar */
+.footer_bottom {
+    text-align: center;
+    padding: 15px 0;
+    /* Use the dark brown for the bottom bar */
+    background-color: #503010; 
+    font-size: 14px;
+    color: #d1d1d1; /* Light text for readability */
+}
+.hero-banner {
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(70%);
+  border-radius: 10px;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.menu-section {
+  padding: 40px;
+  text-align: center;
+  background: linear-gradient(to bottom, #A80000, #800000);
+  color: white;
+  border-radius: 10px;
+}
+
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.menu-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 220px;
+}
+
+.menu-item img {
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 3px solid #FFD700;
+}
+
+.menu-item h3 {
+  color: #FFD700;
+  margin: 10px 0 5px;
+}
+
+.menu-item button {
+  background-color: #FF8C00;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.menu-item button:hover {
+  background-color: #FFD700;
+  color: black;
+}
+
+.offer_strip {
+  overflow: hidden;
+  width: 100%;
+  background-color: rgb(54, 2, 2);
+  padding: 10px 0;
+  position: relative;
+}
+
+.offer_track {
+  display: flex;
+  gap: 30px;
+  animation: scrollOffers 25s linear infinite;
+}
+
+.offer_track video {
+  width: 220px;
+  height: 150px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.offer_track video:hover {
+  transform: scale(1.05);
+}
+
+@keyframes scrollOffers {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Bill</title>
+  <link rel="stylesheet" href="bill.css" />
+  <link rel="stylesheet" href="./responsive.css">
+
+</head>
+<body>
+  <div class="bill-container">
+    <h1>🍽️ Your Order Summary</h1>
+
+    <table id="billTable">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Price (₹)</th>
+          <th>Total (₹)</th>
+        </tr>
+      </thead>
+      <tbody id="billBody">
+        <!-- Items will appear here dynamically -->
+      </tbody>
+    </table>
+
+    <div class="total-section">
+      <h2 id="grandTotal">Grand Total: ₹0</h2>
+    </div>
+
+    <div class="message">
+      <p>🎉 Thank you for ordering from <b>Burger Shaukensss!</b></p>
+      <p>Your delicious food will arrive soon 🍕🍔🥤</p>
+    </div>
+
+    <div class="btn-section">
+      <button onclick="window.location.href='menu.html'">⬅ Back to Menu</button>
+      <button id="clearCart">🧾 Clear Cart</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const billBody = document.getElementById("billBody");
+      const grandTotalEl = document.getElementById("grandTotal");
+
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let grandTotal = 0;
+
+      if (cart.length === 0) {
+        billBody.innerHTML = `
+          <tr><td colspan="4" style="text-align:center;">No items found in your order.</td></tr>
+        `;
+      } else {
+        cart.forEach(item => {
+ const itemTotal = item.price * item.qty;
+
+          grandTotal += itemTotal;
+
+          const row = `
+            <tr>
+              <td>${item.name}</td>
+              <td>${item.qty}</td>
+              <td>${item.price}</td>
+              <td>${itemTotal}</td>
+            </tr>
+          `;
+          billBody.innerHTML += row;
+        });
+      }
+
+      grandTotalEl.textContent = `Grand Total: ₹${grandTotal}`;
+
+      // Clear cart after showing bill (optional)
+      document.getElementById("clearCart").addEventListener("click", () => {
+        localStorage.removeItem("cart");
+        alert("Cart cleared successfully!");
+        window.location.href = "menu.html";
+      });
+    });
+  </script>
+</body>
+</html>

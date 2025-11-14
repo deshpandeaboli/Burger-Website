@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login / Sign Up</title>
+  <link rel="stylesheet" href="./login.css" />
+  <link rel="stylesheet" href="./responsive.css">
+</head>
+
+<body>
+
+  <!-- LOGIN FORM -->
+  <form id="loginForm" class="loginForm">
+    <h3 style="text-align: center;">Log In</h3>
+
+    <label>Enter Email ID</label><br />
+    <input type="email" id="email" name="username" placeholder="Email" required /><br /><br />
+
+    <label>Password</label><br />
+    <input type="password" id="pass" name="password" placeholder="Enter password" required /><br /><br />
+
+    <button type="submit">Login</button>
+
+    <p style="text-align: center; margin-top: 20px;">
+      Don't have an account? <a href="#" id="showRegisterLink">Sign Up</a>
+    </p>
+  </form>
+
+  <!-- REGISTRATION FORM -->
+  <form id="registrationForm" class="loginForm" style="display: none;">
+    <h3 style="text-align: center;">Register / Sign Up</h3>
+
+    <label>Enter Full Name</label><br />
+    <input type="text" id="f_name" name="fname" placeholder="Full Name" required /><br /><br />
+
+    <label>Enter Email ID</label><br />
+    <input type="email" id="email_reg" name="username" placeholder="Email" required /><br /><br />
+
+    <label>Set Password</label><br />
+    <input type="password" id="pass_reg" name="password" placeholder="Set Password" required /><br /><br />
+
+    <label>Confirm Your Password</label><br />
+    <input type="password" id="confirmPassword" placeholder="Confirm Password" required /><br /><br />
+
+    <label>Enter your address</label>
+    <input type="text" id="address_1" name="address" placeholder="address line 1" required/><br /><br />
+
+    <button type="submit">Register</button>
+
+    <p style="text-align: center; margin-top: 20px;">
+      Already have an account? <a href="#" id="showLoginLink">Log In</a>
+    </p>
+  </form>
+
+  <!-- SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const loginForm = document.getElementById("loginForm");
+      const registerForm = document.getElementById("registrationForm");
+      const showRegisterLink = document.getElementById("showRegisterLink");
+      const showLoginLink = document.getElementById("showLoginLink");
+
+      // Read redirect parameter (from cart)
+      const params = new URLSearchParams(window.location.search);
+      const redirectTo = params.get("redirectTo");
+
+      // Switch to Register Form
+      showRegisterLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        loginForm.style.display = "none";
+        registerForm.style.display = "block";
+      });
+
+      // Switch back to Login Form
+      showLoginLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        loginForm.style.display = "block";
+        registerForm.style.display = "none";
+      });
+
+      // REGISTRATION FORM SUBMIT
+      registerForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const password = document.getElementById("pass_reg").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match!");
+          return;
+        }
+
+        const userData = {
+          fullname: document.getElementById("f_name").value,
+          email: document.getElementById("email_reg").value,
+          password: password,
+          address: document.getElementById("address_1").value
+        };
+
+        try {
+          const response = await fetch("http://localhost:2011/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(userData),
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            alert(data.message);
+            registerForm.style.display = "none";
+            loginForm.style.display = "block";
+          } else {
+            alert(data.message || "Registration failed!");
+          }
+
+        } catch (err) {
+          alert("Unable to connect to server.");
+          console.error(err);
+        }
+      });
+
+      // LOGIN FORM SUBMIT
+      loginForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const loginData = {
+          email: document.getElementById("email").value,
+          password: document.getElementById("pass").value,
+        };
+
+        try {
+          const response = await fetch("http://localhost:2011/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(loginData),
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            alert(data.message);
+
+            // FINAL WORKING REDIRECT LOGIC
+            if (redirectTo === "bill") {
+              window.location.href = "bill.html";
+            } else {
+              window.location.href = "menu.html";
+            }
+
+          } else {
+            alert(data.message || "Login failed!");
+          }
+        } catch (err) {
+          alert("Unable to connect to server.");
+          console.error(err);
+        }
+      });
+
+    });
+  </script>
+
+</body>
+</html>
